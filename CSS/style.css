@@ -12,7 +12,7 @@ body {
     display: flex;
     flex-direction: column;
     font-family: "Segoe UI", Arial, sans-serif;
-    background-color: #f4f6fa;
+    background-color: #d7e4ff;
     color: #222;
 }
 
@@ -41,7 +41,7 @@ h3 {
 }
 
 nav {
-    background-color: #14358d;
+    background-color: #ffffff;
     color: white;
     display: flex;
     justify-content: space-between;
@@ -62,7 +62,7 @@ nav ul {
 }
 
 nav a {
-    color: white;
+    color: #2e2862;
     text-decoration: none;
     font-weight: 500;
     transition: 0.3s;
@@ -208,7 +208,27 @@ footer {
     }
 }
 
-.logo-img {
-    height: 60px;      
+.logo-jpg {
+    height: 110px;      
     width: auto;       
+}
+
+.throw-img {
+    position: absolute;      
+    right: 220px;             
+    top: 80%;                
+    transform: translateY(-50%);  
+    max-height: 500px;       
+    width: auto;             
+    z-index: 10;             
+}
+
+.disc-img {
+    position: absolute;       
+    right: 150px;              
+    top: 85%;                 
+    transform: translateY(-50%);  
+    max-height: 500px;        
+    width: auto;              
+    z-index: 10;              
 }
