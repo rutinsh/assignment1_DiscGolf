@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="lv" data-bs-theme="light">
 <head>
@@ -12,7 +15,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid px-3">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="index.php">
             <img src="images/logo.jpg" alt="SDK Palsa logo" height="60" class="d-inline-block align-text-center">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,17 +24,40 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">Sākums</a>
+                    <a class="nav-link" href="index.php">Sākums</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="about.html">Par mums</a>
+                    <a class="nav-link active" aria-current="page" href="about.php">Par mums</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="services.html">Ko mēs piedāvājam</a>
+                    <a class="nav-link" href="services.php">Ko mēs piedāvājam</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Kontakti</a>
+                    <a class="nav-link" href="contact.php">Kontakti</a>
                 </li>
+                <?php if (isset($_SESSION['user_id'])): ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.php">
+                            <i class="bi bi-speedometer2"></i> Pārvaldības panelis
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="logout.php">
+                            <i class="bi bi-door-left"></i> Izlogoties
+                        </a>
+                    </li>
+                <?php else: ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.php">
+                            <i class="bi bi-box-arrow-in-right"></i> Pieslēgties
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="register.php">
+                            <i class="bi bi-person-plus"></i> Reģistrēties
+                        </a>
+                    </li>
+                <?php endif; ?>
                 <li class="nav-item">
                     <button class="btn btn-sm btn-dark ms-2" id="themeToggle">
                         <i class="bi bi-moon"></i> Dark Mode
